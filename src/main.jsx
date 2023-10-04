@@ -4,6 +4,7 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './Components/Home/Home'
 import AboutUS from './Components/AboutUS/AboutUS'
+import MainSection from './Components/MainSection/MainSection'
 
 const router = createBrowserRouter([{
   path: '/',
@@ -12,6 +13,11 @@ const router = createBrowserRouter([{
     {
       path:'/about',
       element:<AboutUS></AboutUS>
+    },
+    {
+      path:'/',
+      loader: () => fetch('./news.json'),
+      element:<MainSection></MainSection>
     }
   ]
 }])
