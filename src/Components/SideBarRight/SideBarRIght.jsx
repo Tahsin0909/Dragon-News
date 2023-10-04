@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import QZone from "./QZone/QZone";
 
 const SideBarRight = () => {
     return (
@@ -5,21 +7,25 @@ const SideBarRight = () => {
             <div>
                 <h1 className="font-bold text-xl mb-2">Sign In With</h1>
                 <div className="flex flex-col gap-2 ">
-                    <div className="flex gap-1 border py-2 px-14 border-blue-600">
-                        <div>
-                            <img className="w-6" src="https://cdn-icons-png.flaticon.com/128/281/281764.png" alt="" />
-                        </div>
-                        <div>
-                            <p className="hover:bg-gradient-to-r from-red-600 to-green-500 bg-clip-text">Sign In With Google</p>
-                        </div>
+                    <div >
+                        <Link className="flex gap-1 border py-2 px-14 border-blue-600">
+                            <div>
+                                <img className="w-6" src="https://cdn-icons-png.flaticon.com/128/281/281764.png" alt="" />
+                            </div>
+                            <div>
+                                <p className="hover:bg-gradient-to-r from-red-600 to-green-500 bg-clip-text">Sign In With Google</p>
+                            </div>
+                        </Link>
                     </div>
-                    <div className="flex gap-1 py-2 px-14 border border-blue-600">
-                        <div>
-                            <img className="w-6" src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="" />
-                        </div>
-                        <div>
-                            <p className="hover:text-blue-500">Sign In With FaceBook</p>
-                        </div>
+                    <div >
+                        <Link className="flex gap-1 py-2 px-14 border border-blue-600">
+                            <div>
+                                <img className="w-6" src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="" />
+                            </div>
+                            <div>
+                                <p className="hover:text-blue-500">Sign In With FaceBook</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="mt-6">
@@ -39,6 +45,11 @@ const SideBarRight = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                {
+                    <QZone></QZone>
+                }
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 
 import Category from "./Category";
 import { useEffect, useState } from "react";
+import Sports from "./Sports";
 
 
 const SideBarLeft = () => {
@@ -20,6 +21,11 @@ const SideBarLeft = () => {
             <div className="flex flex-col gap-2" >
                 {
                     Categories.map(category => <Category category={category} key={category.id}></Category>)
+                }
+            </div>
+            <div>
+                {
+                    <Sports></Sports>
                 }
             </div>
         </div>

@@ -9,7 +9,7 @@ const HomeNews = () => {
     return (
         <div className="flex flex-col gap-4">
             {
-                AllNews.map(news => <News key={news.category_id} news={news}></News>)
+                AllNews.slice(0, 10).map(news => <News key={news.category_id} news={news}></News>)
             }
         </div>
     );
