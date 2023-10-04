@@ -1,12 +1,17 @@
-import Header from "../Header/Header";
-import Slider from "../Slider/Slider";
+
+
+import { Outlet } from "react-router-dom";
+import NavBar from "../NavBar/NavBAr";
+import SharedPage from "../SharedPAge/SharedPage";
+
 
 
 const Home = () => {
     return (
         <div>
-            <Header></Header>
-            <Slider></Slider>
+            <SharedPage></SharedPage>
+            <NavBar></NavBar>
+            <Outlet></Outlet>
         </div>
     );
 };
