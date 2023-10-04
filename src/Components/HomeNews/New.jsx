@@ -7,7 +7,7 @@ const News = ({ news }) => {
     console.log(news)
     const { title, details, author,rating, total_view    } = news
     return (
-        <div className="shadow-lg p-2 lg:w-[600px]">
+        <div className="shadow-lg p-2  lg:w-[800px]">
             <div className="flex items-center gap-1  p-2 bg-slate-400">
                 <img className="w-10 rounded-full" src={author.img} alt="" />
                 <div>
