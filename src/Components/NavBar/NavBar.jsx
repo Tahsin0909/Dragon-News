@@ -36,8 +36,8 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex gap-1">
-                    <img className="w-10 rounded-full" src={currentuser.uid ? `${photoURL}` : "https://i.ibb.co/PDdQSKL/user.png"} alt="" />
-                    <Link to={currentuser.uid ? ' ' : '/signIn'} ><button onClick={() =>handleGoogleSignOut()} className="btn btn-primary">{currentuser.uid ? 'Sign Out' : 'Sign In'}</button></Link>
+                    <img className="w-10 rounded-full" src={currentuser.email ? `${photoURL}` : "https://i.ibb.co/PDdQSKL/user.png"} alt="" />
+                    <Link to={currentuser.email? ' ' : '/signIn'} ><button onClick={() =>handleGoogleSignOut()} className="btn btn-primary">{currentuser.email ? 'Sign Out' : 'Sign In'}</button></Link>
                 </div>
             </div>
         </div>

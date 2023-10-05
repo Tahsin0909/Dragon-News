@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext } from "react";
 import { auth } from "../FireBase/Auth";
 import { useState } from "react";
@@ -26,7 +26,12 @@ const AuthProvider = ({ children }) => {
         return () => unSubscribe()
     }, [])
 
-
+    const SignUpEmail = (email, password) =>{
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+    const SignInEmail = (email, password) =>{
+        return signInWithEmailAndPassword(auth, email, password)
+    }
     const GoogleSignOut = () => {
         signOut(auth)
             .then(
@@ -38,7 +43,9 @@ const AuthProvider = ({ children }) => {
     const Providers = {
         currentuser,
         GoogleSignIn,
-        GoogleSignOut
+        GoogleSignOut,
+        SignUpEmail,
+        SignInEmail
     }
     return (
         <AuthContext.Provider value={Providers}>
