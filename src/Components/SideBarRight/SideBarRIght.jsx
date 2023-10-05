@@ -1,14 +1,25 @@
 import { Link } from "react-router-dom";
 import QZone from "./QZone/QZone";
+import { useContext } from "react";
+import { AuthContext } from "../AuthContext/AuthContext";
+
 
 const SideBarRight = () => {
+
+    const {GoogleSignIn} = useContext(AuthContext)
+
+    const handleGoogleSIgnIn = () =>{
+        
+        GoogleSignIn()
+        // .then(result => console.log(result.user))
+    }
     return (
         <div>
             <div>
                 <h1 className="font-bold text-xl mb-2">Sign In With</h1>
                 <div className="flex flex-col gap-2 ">
                     <div >
-                        <Link className="flex gap-1 border py-2 px-14 border-blue-600">
+                        <Link onClick={e=> { e.preventDefault, handleGoogleSIgnIn()}} className="flex gap-1 border py-2 px-14 border-blue-600">
                             <div>
                                 <img className="w-6" src="https://cdn-icons-png.flaticon.com/128/281/281764.png" alt="" />
                             </div>

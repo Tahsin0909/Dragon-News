@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 import NavLink from "./NavLink";
+import { useContext } from "react";
+import { AuthContext } from "../AuthContext/AuthContext";
 
 
 const NavBar = () => {
+    const { currentuser, GoogleSignOut } = useContext(AuthContext)
+    const { photoURL } = currentuser
+    console.log(currentuser)
+    const handleGoogleSignOut = () => {
+        GoogleSignOut()
+        console.log(currentuser)
+    }
+
     return (
         <div className="mx-2 md:mx-10">
             <div className="navbar bg-base-100">
@@ -26,8 +36,8 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex gap-1">
-                    <img className="w-10" src="https://i.ibb.co/PDdQSKL/user.png" alt="" />
-                    <Link><button className="btn btn-primary">Sign In</button></Link>
+                    <img className="w-10 rounded-full" src={currentuser.uid ? `${photoURL}` : "https://i.ibb.co/PDdQSKL/user.png"} alt="" />
+                    <Link to={currentuser.uid ? ' ' : '/signIn'} ><button onClick={() =>handleGoogleSignOut()} className="btn btn-primary">{currentuser.uid ? 'Sign Out' : 'Sign In'}</button></Link>
                 </div>
             </div>
         </div>

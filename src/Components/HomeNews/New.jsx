@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const News = ({ news }) => {
-    console.log(news)
+    // console.log(news)
     const { title, details, author,rating, total_view    } = news
     return (
         <div className="shadow-lg p-2  lg:w-[800px]">
