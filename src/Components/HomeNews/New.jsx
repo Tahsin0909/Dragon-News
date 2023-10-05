@@ -9,25 +9,25 @@ const News = ({ news }) => {
     return (
         <div className="shadow-lg p-2  lg:w-[800px]">
             <div className="flex items-center gap-1  p-2 bg-slate-400">
-                <img className="w-10 rounded-full" src={author.img} alt="" />
+                <img className="w-10 rounded-full" src={author?.img} alt="" />
                 <div>
-                    <p>{author.name}</p>
-                    <p>{author.published_date}</p>
+                    <p>{author?.name}</p>
+                    <p>{author?.published_date}</p>
                 </div>
             </div>
             <div>
                 <p className="font-bold lg:text-lg my-2">{title}</p>
-                <img className="w-full" src={news.image_url} alt="" />
+                <img className="w-full" src={news?.image_url} alt="" />
             </div>
             <div className="my-2">
                 <p>
                     {
-                        details.length > 200 ? details.slice(0, 200) : ''
+                        details?.length > 200 ? details?.slice(0, 200) : ''
                     }
-                    <Link>
+                    <Link to={`/news/${news._id}`}>
                         <span className="text-red-500">
                             {
-                                details.length > 200 ? '  Read More' : ' '
+                                details?.length > 200 ? '  Read More' : ' '
                             }....
                         </span></Link>
                 </p>

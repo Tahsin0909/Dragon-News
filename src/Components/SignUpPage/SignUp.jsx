@@ -21,7 +21,7 @@ const SignUp = () => {
                 Sign Up
             </h4>
             <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                Enter your details to register.
+                Enter your details to Register With Us.
             </p>
             <form onSubmit={e =>{ e.preventDefault(), handleSignUp(e)}}
                 className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
