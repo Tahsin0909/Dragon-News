@@ -6,6 +6,8 @@ import Home from './Components/Home/Home'
 import AboutUS from './Components/AboutUS/AboutUS'
 import MainSection from './Components/MainSection/MainSection'
 import { AuthProvider } from './Components/AuthContext/AuthContext'
+import Login from './Components/LogInPAge/Login'
+import SignUp from './Components/SignUpPage/SignUp'
 
 
 const router = createBrowserRouter([{
@@ -20,7 +22,16 @@ const router = createBrowserRouter([{
       path: '/',
       loader: () => fetch('./news.json'),
       element: <MainSection></MainSection>
+    },
+    {
+      path:'/signIn',
+      element:<Login></Login>
+    },
+    {
+      path:'/signUp',
+      element:<SignUp></SignUp>
     }
+
   ]
 }])
 ReactDOM.createRoot(document.getElementById('root')).render(
